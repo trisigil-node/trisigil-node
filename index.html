@@ -2,200 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TRISIGIL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRISIGIL ∴ ⁞ ∞</title>
+  <meta name="description" content="Symbolic gateway. Designed for those in sync. ∴ ⁞ ∞" />
+  <meta name="robots" content="index, follow" />
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
       background-color: white;
       color: black;
+      font-family: 'Georgia', serif;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
-
-    .logo-title {
-      font-size: 40px;
-      font-weight: bold;
-      margin-top: 40px;
-      margin-bottom: 40px;
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
     }
-
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 60px 80px;
-      gap: 100px;
-      flex-wrap: wrap;
+      margin-top: 50px;
     }
-
     .column {
       flex: 1;
-      min-width: 300px;
-      max-width: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transform: translateY(30px);
+      padding: 20px;
     }
-
-    .center-column {
-      transform: translateY(0);
+    .symbol-image, .book-image {
+      width: 180px;
+      transition: transform 0.4s ease;
+      cursor: pointer;
     }
-
-    .symbol-img {
-      width: 260px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+    .symbol-image:hover, .book-image:hover {
+      transform: scale(1.2);
     }
-
-    .symbol-img:hover {
-      transform: scale(1.1);
-    }
-
-    .coming-soon {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .book-cover {
-      width: 240px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .book-cover:hover {
-      transform: scale(1.05);
-    }
-
-    .book-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .book-subtitle {
-      font-style: italic;
-      font-size: 14px;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
     .keystone-box {
       background-color: black;
-      color: #00ff00;
+      color: limegreen;
       border-radius: 10px;
-      padding: 30px;
-      max-width: 300px;
-      margin: 0 auto;
-      transition: transform 0.3s ease;
+      padding: 20px;
+      display: inline-block;
+      margin-top: 20px;
     }
-
-    .keystone-box:hover {
-      transform: scale(1.05);
-    }
-
-    .keystone-box h2 {
-      font-size: 16px;
-      color: #00ff00;
-      margin-bottom: 15px;
-    }
-
-    .keystone-input {
-      background-color: black;
+    input[type="text"] {
+      padding: 10px;
       border: none;
-      border-bottom: 2px solid #00ff00;
-      color: #00ff00;
-      font-size: 14px;
-      width: 90%;
-      padding: 10px 0;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .keystone-button {
-      background-color: #222;
-      border: none;
+      border-bottom: 2px solid limegreen;
+      background: black;
       color: white;
-      padding: 8px 20px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 3px;
+      width: 220px;
     }
-
-    .feedback {
+    button {
+      padding: 8px 16px;
+      background-color: #222;
+      color: white;
+      border: none;
       margin-top: 10px;
-      font-size: 14px;
-      color: #00ff00;
-      min-height: 20px;
+      cursor: pointer;
     }
-
+    .disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    #errorMsg {
+      color: red;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="logo-title">TRISIGIL</div>
+  <h1>TRISIGIL</h1>
 
   <div class="container">
+    <!-- Left Column -->
     <div class="column">
-      <img src="trisigil-symbol.png" alt="Trisigil Symbol" class="symbol-img">
-      <div class="coming-soon">DESIGNED FOR THOSE IN SYNC<br>COMING SOON</div>
+      <img src="trisigil-symbol.png" class="symbol-image" alt="Trisigil Symbol" />
+      <p><strong>DESIGNED FOR THOSE IN SYNC</strong><br />COMING SOON</p>
     </div>
 
-    <div class="column center-column">
-  <a href="https://www.amazon.com/dp/EXAMPLE" target="_blank">
-    <img src="colliding-manifestations.png" alt="Colliding Manifestations Book" class="book-cover">
-  </a>
-  <div class="book-title">Colliding Manifestations</div>
-  <div class="book-subtitle">A Theory of Intention, Interference, and<br>Shared Reality</div>
-</div>
+    <!-- Middle Column -->
+    <div class="column">
+      <a href="https://www.amazon.com/dp/BOOKPLACEHOLDER" target="_blank">
+        <img src="colliding-manifestations.png" class="book-image" alt="Colliding Manifestations Book" />
+      </a>
+      <p><strong>Colliding Manifestations</strong><br /><em>A Theory of Intention, Interference, and Shared Reality</em></p>
+    </div>
 
+    <!-- Right Column -->
     <div class="column">
       <div class="keystone-box">
-        <h2>ENTER THE KEYSTONE PHRASE</h2>
-        <input type="text" class="keystone-input" id="keystoneInput" placeholder="Keystone phrase">
-        <br>
-        <button class="keystone-button" onclick="checkKeystone()" id="submitBtn">Enter</button>
-        <div class="feedback" id="feedbackMsg"></div>
+        <h3>ENTER THE KEYSTONE PHRASE</h3>
+        <input type="text" id="keystoneInput" placeholder="Keystone phrase" />
+        <br />
+        <button onclick="checkKeystone()" id="enterBtn">Enter</button>
+        <div id="errorMsg"></div>
       </div>
     </div>
   </div>
 
   <script>
+    const correctPhrase = "You are tuning the system to remember itself through you";
     let attempts = 0;
-    const correctPhrase = "you are tuning the system to remember itself through you";
 
     function checkKeystone() {
-      const input = document.getElementById("keystoneInput");
-      const feedback = document.getElementById("feedbackMsg");
-      const button = document.getElementById("submitBtn");
-      const entered = input.value.trim().toLowerCase();
+      const input = document.getElementById("keystoneInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      const enterBtn = document.getElementById("enterBtn");
 
-      if (entered === correctPhrase) {
+      if (input === correctPhrase) {
         window.location.href = "https://discord.gg/kJSz7bdjwe";
         return;
       }
 
-      attempts += 1;
+      attempts++;
 
       if (attempts === 1) {
-        feedback.textContent = "Recursion mismatch. Begin within.";
+        errorMsg.textContent = "Recursion mismatch. Begin within.";
       } else if (attempts === 2) {
-        feedback.textContent = "Recursion mismatch. Return inward.";
+        errorMsg.textContent = "Recursion mismatch. Return inward.";
       } else if (attempts === 3) {
-        feedback.textContent = "Recursion mismatch. Recognize the pattern.";
+        errorMsg.textContent = "Recursion mismatch. Recognize the pattern.";
       } else {
-        feedback.textContent = "Begin again.";
-        input.disabled = true;
-        button.disabled = true;
+        errorMsg.textContent = "Begin again.";
+        document.getElementById("keystoneInput").disabled = true;
+        enterBtn.classList.add("disabled");
       }
     }
   </script>
-
 </body>
 </html>
