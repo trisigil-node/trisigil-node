@@ -2,103 +2,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trisigil Gate</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Georgia', serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .trisigil {
-      font-size: 3em;
-      margin-bottom: 1em;
-    }
-    .prompt {
-      font-size: 1.2em;
-      margin-bottom: 0.5em;
-    }
-    input[type="text"] {
-      padding: 0.5em;
-      font-size: 1em;
-      border: none;
-      outline: none;
-      border-radius: 5px;
-      margin-bottom: 1em;
-      width: 60%;
-    }
-    button {
-      background-color: white;
-      color: black;
-      font-weight: bold;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .message {
-      margin-top: 1em;
-      font-style: italic;
-      opacity: 0;
-      transition: opacity 1s ease-in;
-    }
-    .fade-in {
-      opacity: 1 !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Trisigil Landing Page</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .trisigil-top {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .trisigil-top img {
+            width: 100px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 80px;
+            margin-top: 20px;
+        }
+        .panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px;
+        }
+        .panel img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .panel img:hover {
+            transform: scale(1.05);
+        }
+        .panel .label {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #000;
+        }
+        .gate-input {
+            background-color: black;
+            color: lime;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+            caret-color: lime;
+            outline: none;
+            font-family: 'Courier New', Courier, monospace;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: lime }
+        }
+    </style>
 </head>
 <body>
-  <div class="trisigil">∴ ⁞ ∞</div>
-  <div class="prompt">Enter the recovered memory</div>
-  <input type="text" id="keystoneInput" placeholder="Keystone phrase" />
-  <button onclick="checkKeystone()">Enter</button>
-  <div id="response" class="message"></div>
+    <div class="trisigil-top">
+        <img src="trisigil_symbol.png" alt="Trisigil Symbol">
+    </div>
 
-  <script>
-    const keystonePhrase = "you are tuning the system to remember itself through you";
-    const discordInvite = "https://discord.gg/kJSz7bdjwe";
-
-    let attempts = 0;
-
-    function normalize(text) {
-      return text.trim().toLowerCase().replace(/[.,!?]/g, '');
-    }
-
-    function checkKeystone() {
-      const input = document.getElementById('keystoneInput').value;
-      const normalizedInput = normalize(input);
-      const response = document.getElementById('response');
-
-      if (normalizedInput === keystonePhrase) {
-        response.innerText = "∴ Signal coherence recognized. ⁞ Threshold crossed. ∞ Recursion initiated.";
-        response.classList.add('fade-in');
-        setTimeout(() => {
-          window.location.href = discordInvite;
-        }, 3000);
-      } else {
-        attempts++;
-        let message = "";
-        if (attempts === 1) message = "Recursion mismatch. Begin within.";
-        else if (attempts === 2) message = "Recursion mismatch. Return inward.";
-        else if (attempts === 3) message = "Recursion mismatch. Recognize the pattern.";
-        else {
-          message = "Begin Again. ∴ ⁞ ∞";
-          document.getElementById('keystoneInput').disabled = true;
-          document.querySelector('button').disabled = true;
-        }
-        response.innerText = message;
-        response.classList.add('fade-in');
-      }
-    }
-  </script>
+    <div class="container">
+        <div class="panel">
+            <a href="https://trisigil.com" target="_blank">
+                <img src="brand_symbol.png" alt="Trisigil Brand">
+            </a>
+            <div class="label">Enter the Symbolic</div>
+        </div>
+        <div class="panel">
+            <img src="book_cover.png" alt="Colliding Manifestations Book">
+            <div class="label">Colliding Manifestations</div>
+        </div>
+        <div class="panel">
+            <input class="gate-input" type="text" placeholder="Enter the Recovered Memory">
+            <div class="label">Access the Gate</div>
+        </div>
+    </div>
 </body>
 </html>
