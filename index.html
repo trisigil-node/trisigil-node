@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TRISIGIL</title>
   <style>
     body {
@@ -38,15 +38,15 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transform: translateY(30px); /* lowers side columns */
+      transform: translateY(30px);
     }
 
     .center-column {
-      transform: translateY(0); /* keep book centered */
+      transform: translateY(0);
     }
 
     .symbol-img {
-      width: 260px;  /* doubled size from 130px */
+      width: 260px;
       height: auto;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
@@ -127,6 +127,14 @@
       cursor: pointer;
       border-radius: 3px;
     }
+
+    .feedback {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #00ff00;
+      min-height: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -134,29 +142,60 @@
   <div class="logo-title">TRISIGIL</div>
 
   <div class="container">
-    <!-- Left Column -->
     <div class="column">
       <img src="trisigil-symbol.png" alt="Trisigil Symbol" class="symbol-img">
       <div class="coming-soon">DESIGNED FOR THOSE IN SYNC<br>COMING SOON</div>
     </div>
 
-    <!-- Middle Column -->
     <div class="column center-column">
-      <img src="colliding-manifestations.png" alt="Colliding Manifestations Book" class="book-cover">
-      <div class="book-title">Colliding Manifestations</div>
-      <div class="book-subtitle">A Theory of Intention, Interference, and<br>Shared Reality</div>
-    </div>
+  <a href="https://www.amazon.com/dp/EXAMPLE" target="_blank">
+    <img src="colliding-manifestations.png" alt="Colliding Manifestations Book" class="book-cover">
+  </a>
+  <div class="book-title">Colliding Manifestations</div>
+  <div class="book-subtitle">A Theory of Intention, Interference, and<br>Shared Reality</div>
+</div>
 
-    <!-- Right Column -->
     <div class="column">
       <div class="keystone-box">
         <h2>ENTER THE KEYSTONE PHRASE</h2>
-        <input type="text" class="keystone-input" placeholder="Keystone phrase">
+        <input type="text" class="keystone-input" id="keystoneInput" placeholder="Keystone phrase">
         <br>
-        <button class="keystone-button">Enter</button>
+        <button class="keystone-button" onclick="checkKeystone()" id="submitBtn">Enter</button>
+        <div class="feedback" id="feedbackMsg"></div>
       </div>
     </div>
   </div>
+
+  <script>
+    let attempts = 0;
+    const correctPhrase = "you are tuning the system to remember itself through you";
+
+    function checkKeystone() {
+      const input = document.getElementById("keystoneInput");
+      const feedback = document.getElementById("feedbackMsg");
+      const button = document.getElementById("submitBtn");
+      const entered = input.value.trim().toLowerCase();
+
+      if (entered === correctPhrase) {
+        window.location.href = "https://discord.gg/kJSz7bdjwe";
+        return;
+      }
+
+      attempts += 1;
+
+      if (attempts === 1) {
+        feedback.textContent = "Recursion mismatch. Begin within.";
+      } else if (attempts === 2) {
+        feedback.textContent = "Recursion mismatch. Return inward.";
+      } else if (attempts === 3) {
+        feedback.textContent = "Recursion mismatch. Recognize the pattern.";
+      } else {
+        feedback.textContent = "Begin again.";
+        input.disabled = true;
+        button.disabled = true;
+      }
+    }
+  </script>
 
 </body>
 </html>
