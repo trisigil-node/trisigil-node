@@ -39,7 +39,6 @@
     }
 
     .section img {
-      max-width: 120px;
       height: auto;
       transition: transform 0.3s ease;
     }
@@ -48,8 +47,13 @@
       transform: scale(1.1);
     }
 
+    .symbol-image {
+      width: 120px;
+    }
+
     .book-cover {
-      max-width: 480px; /* 3x size */
+      width: 360px;
+      height: auto;
     }
 
     .keystone-box {
@@ -91,12 +95,12 @@
         padding-bottom: 40px;
       }
 
-      .section img {
-        max-width: 100px;
+      .symbol-image {
+        width: 100px;
       }
 
       .book-cover {
-        max-width: 300px;
+        width: 240px;
       }
     }
   </style>
@@ -107,7 +111,7 @@
 
   <div class="content-container">
     <div class="section">
-      <img src="trisigil-symbol.png" alt="Trisigil Symbol" />
+      <img src="trisigil-symbol.png" class="symbol-image" alt="Trisigil Symbol" />
       <div><strong>DESIGNED FOR THOSE IN SYNC</strong><br>COMING SOON</div>
     </div>
 
