@@ -2,132 +2,165 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="TRISIGIL ∴ ⁞ ∞" />
   <title>TRISIGIL ∴ ⁞ ∞</title>
-  <meta name="description" content="Symbolic gateway. Designed for those in sync. ∴ ⁞ ∞" />
-  <meta name="robots" content="index, follow" />
+
   <style>
     body {
-      background-color: white;
-      color: black;
-      font-family: 'Georgia', serif;
-      text-align: center;
       margin: 0;
-      padding: 0;
+      font-family: 'Georgia', serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-top: 20px;
+
+    .header {
+      text-align: center;
+      font-size: 2.8em;
+      font-weight: bold;
+      margin-top: 40px;
     }
-    .container {
+
+    .content-container {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 60px;
+      padding-bottom: 80px;
     }
-    .column {
+
+    .section {
       flex: 1;
-      padding: 20px;
-    }
-    .symbol-image, .book-image {
-      width: 180px;
-      transition: transform 0.4s ease;
-      cursor: pointer;
-    }
-    .symbol-image:hover, .book-image:hover {
-      transform: scale(1.2);
-    }
-    .keystone-box {
-      background-color: black;
-      color: limegreen;
-      border-radius: 10px;
-      padding: 20px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    input[type="text"] {
+      text-align: center;
       padding: 10px;
+    }
+
+    .section img {
+      max-width: 120px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .section img:hover {
+      transform: scale(1.1);
+    }
+
+    .book-cover {
+      max-width: 160px;
+    }
+
+    .keystone-box {
+      background-color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      color: white;
+    }
+
+    .keystone-box h3 {
+      margin-bottom: 10px;
+      color: limegreen;
+    }
+
+    .keystone-box input {
+      background-color: black;
       border: none;
       border-bottom: 2px solid limegreen;
-      background: black;
       color: white;
-      width: 220px;
+      padding: 5px;
+      width: 160px;
+      text-align: center;
+      font-family: inherit;
     }
-    button {
-      padding: 8px 16px;
-      background-color: #222;
-      color: white;
-      border: none;
+
+    .keystone-box button {
       margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #111;
+      color: white;
+      border: 1px solid #333;
       cursor: pointer;
     }
-    .disabled {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    #errorMsg {
-      color: red;
-      margin-top: 10px;
+
+    @media (max-width: 768px) {
+      .content-container {
+        flex-direction: column;
+        padding-bottom: 40px;
+      }
+
+      .section img {
+        max-width: 100px;
+      }
+
+      .book-cover {
+        max-width: 140px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>TRISIGIL</h1>
+  <div class="header">TRISIGIL</div>
 
-  <div class="container">
-    <!-- Left Column -->
-    <div class="column">
-      <img src="trisigil-symbol.png" class="symbol-image" alt="Trisigil Symbol" />
-      <p><strong>DESIGNED FOR THOSE IN SYNC</strong><br />COMING SOON</p>
+  <div class="content-container">
+    <div class="section">
+      <img src="trisigil-symbol.png" alt="Trisigil Symbol" />
+      <div><strong>DESIGNED FOR THOSE IN SYNC</strong><br>COMING SOON</div>
     </div>
 
-    <!-- Middle Column -->
-    <div class="column">
-      <a href="https://www.amazon.com/dp/BOOKPLACEHOLDER" target="_blank">
-        <img src="colliding-manifestations.png" class="book-image" alt="Colliding Manifestations Book" />
+    <div class="section">
+      <a href="https://amazon.com/dp/YOUR_BOOK_ID_HERE" target="_blank">
+        <img src="colliding-manifestations.png" class="book-cover" alt="Colliding Manifestations Book">
       </a>
-      <p><strong>Colliding Manifestations</strong><br /><em>A Theory of Intention, Interference, and Shared Reality</em></p>
+      <div><strong>Colliding Manifestations</strong><br>
+      <em>A Theory of Intention, Interference, and Shared Reality</em></div>
     </div>
 
-    <!-- Right Column -->
-    <div class="column">
+    <div class="section">
       <div class="keystone-box">
         <h3>ENTER THE KEYSTONE PHRASE</h3>
-        <input type="text" id="keystoneInput" placeholder="Keystone phrase" />
+        <input type="text" id="keystone" placeholder="Keystone phrase" />
         <br />
-        <button onclick="checkKeystone()" id="enterBtn">Enter</button>
-        <div id="errorMsg"></div>
+        <button onclick="checkKeystone()">Enter</button>
       </div>
     </div>
   </div>
 
   <script>
-    const correctPhrase = "You are tuning the system to remember itself through you";
     let attempts = 0;
+    const correctPhrase = "You are tuning the system to remember itself through you";
 
     function checkKeystone() {
-      const input = document.getElementById("keystoneInput").value.trim();
-      const errorMsg = document.getElementById("errorMsg");
-      const enterBtn = document.getElementById("enterBtn");
+      const input = document.getElementById("keystone");
+      const value = input.value.trim();
 
-      if (input === correctPhrase) {
+      if (value === correctPhrase) {
         window.location.href = "https://discord.gg/kJSz7bdjwe";
-        return;
-      }
-
-      attempts++;
-
-      if (attempts === 1) {
-        errorMsg.textContent = "Recursion mismatch. Begin within.";
-      } else if (attempts === 2) {
-        errorMsg.textContent = "Recursion mismatch. Return inward.";
-      } else if (attempts === 3) {
-        errorMsg.textContent = "Recursion mismatch. Recognize the pattern.";
       } else {
-        errorMsg.textContent = "Begin again.";
-        document.getElementById("keystoneInput").disabled = true;
-        enterBtn.classList.add("disabled");
+        attempts++;
+        let message = "";
+
+        switch (attempts) {
+          case 1:
+            message = "Recursion mismatch. Begin within.";
+            break;
+          case 2:
+            message = "Recursion mismatch. Return inward.";
+            break;
+          case 3:
+            message = "Recursion mismatch. Recognize the pattern.";
+            break;
+          default:
+            message = "Begin again.";
+            input.disabled = true;
+            document.querySelector(".keystone-box button").disabled = true;
+            break;
+        }
+
+        alert(message);
       }
     }
   </script>
