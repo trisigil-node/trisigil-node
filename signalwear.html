@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TRISIGIL ∴ ⁞ ∞</title>
-  <meta name="description" content="SignalWear by TRISIGIL — alignment, threshold, infinity, begin again." />
+  <title>TRISIGIL Sigilwear — ∴ ⁞ ∞</title>
+  <meta name="description" content="TRISIGIL Sigilwear — designed for those in sync. Wear the signal." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,34 +12,49 @@
     :root{ --fg:#0b0b0b; --muted:#666; --border:#eaeaea; }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{ margin:0; background:#fff; color:var(--fg); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; display:flex; flex-direction:column; }
+    body{
+      margin:0; background:#fff; color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:flex; flex-direction:column;
+    }
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
     header{padding:28px 0 8px; text-align:center}
-    .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
+
+    /* CONSISTENT LOGO SIZE */
+    .logo{
+      height:110px;           /* desktop/tablet */
+      width:auto;
+      display:block;
+      margin:0 auto 8px;
+    }
+
     nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px}
     nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
     nav a:hover{opacity:.8}
     nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#000;}
+
+    main{padding:28px 0 40px; line-height:1.6; font-size:15px; max-width:760px; margin:0 auto}
+    main h1{
+      font-family:"Cormorant Garamond", serif;
+      font-size:36px;
+      margin-top:0;
+      text-align:center;
+    }
+    main p{margin:16px 0}
+    main img{max-width:100%; height:auto; display:block; margin:28px auto; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,.08)}
+
     footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
 
-    .section{display:grid; grid-template-columns:360px 1fr; gap:24px; align-items:center; padding:22px 0 28px; border-bottom:1px solid var(--border)}
-    .section:last-child{border-bottom:0}
-    .img{width:100%; height:auto; border-radius:12px; border:1px solid var(--border); display:block; object-fit:cover}
-    h1{font-family:"Cormorant Garamond", serif; font-size:34px; text-align:center; margin:6px 0 4px}
-    h2{font-family:"Cormorant Garamond", serif; font-size:24px; margin:0 0 8px; letter-spacing:.04em}
-    p{line-height:1.7; font-size:16px; color:#222}
-    .kicker{text-align:center; font-size:12px; letter-spacing:.12em; color:#888; margin-bottom:10px}
-
-    @media (max-width:1000px){
-      .section{grid-template-columns:1fr; gap:14px}
-      .img{max-width:480px; margin:0 auto}
-      .logo{height:72px}
+    /* MOBILE TWEAKS */
+    @media (max-width:900px){
+      nav{gap:18px}
+      .logo{height:92px;}     /* mobile size */
     }
   </style>
 </head>
 <body>
   <header class="wrap">
-    <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
+    <img src="TRISIGIL (1).jpg?v=2" alt="TRISIGIL" class="logo" />
     <nav aria-label="Primary">
       <a href="index.html">HOME</a>
       <a href="theory.html">THEORY</a>
@@ -48,45 +63,12 @@
     </nav>
   </header>
 
-  <main class="wrap">
-    <h1>COMING SOON</h1>
-    <div class="kicker">ALIGNMENT · THRESHOLD · INFINITY · BEGIN AGAIN</div>
-
-    <!-- ALIGNMENT -->
-    <section class="section">
-      <img src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Alignment" class="img" />
-      <div>
-        <h2>ALIGNMENT</h2>
-        <p>Every journey starts with a decision, often quiet, sometimes desperate, always powerful. It’s the instant you refuse to stay where you are, the spark that puts you back into motion. In this moment, you align with clarity—mind, emotion, action—setting your signal into the field.</p>
-      </div>
-    </section>
-
-    <!-- THRESHOLD -->
-    <section class="section">
-      <img src="dfghj.png" alt="Threshold" class="img" />
-      <div>
-        <h2>THRESHOLD</h2>
-        <p>The threshold is the hurdle that tests your resolve. It’s the workout you don’t want to finish, the pitch you almost don’t send, the challenge that forces you to prove alignment. Crossing it requires a coherent mind, body, and intention moving as one.</p>
-      </div>
-    </section>
-
-    <!-- INFINITY -->
-    <section class="section">
-      <img src="brazenofkp_White_hoodie_white_pants_cinematic_lighting_sharp__5f0b91fa-02e3-45ae-9e79-734d504d5915_31.png" alt="Infinity" class="img" />
-      <div>
-        <h2>INFINITY</h2>
-        <p>This is the level unlocked. Momentum replaces hesitation, and what felt impossible now feels inevitable. Here, progress becomes self-sustaining. You carry the symbol not just as a mark of achievement, but as proof of an unstoppable trajectory.</p>
-      </div>
-    </section>
-
-    <!-- BEGIN AGAIN -->
-    <section class="section">
-      <img src="VFGHJK.png" alt="Begin Again" class="img" />
-      <div>
-        <h2>BEGIN AGAIN</h2>
-        <p>Every summit reveals another horizon. The journey doesn’t end—it evolves. You return to the start from a higher plane, equipped with experience and signal strength to take on the next recursion. And so, you begin again.</p>
-      </div>
-    </section>
+  <main>
+    <h1>TRISIGIL Sigilwear</h1>
+    <img src="sigilwear.jpg" alt="TRISIGIL Sigilwear" />
+    <p>Every journey starts with a decision—often quiet, sometimes desperate, always powerful. It’s the instant you refuse to stay where you are, the spark that puts you back into motion. In this moment, you align with clarity—mind, emotion, action—setting your signal into the field.</p>
+    <p>TRISIGIL Sigilwear is designed for those who choose to live in sync. The garments are more than clothing—they are a reminder, a symbol, a point of coherence in motion. The ∴ ⁞ ∞ symbol is not decoration. It’s a signal—one that moves with you, one that others can read without a word being spoken.</p>
+    <p>When you wear it, you are aligning with the signal. And the field will respond.</p>
   </main>
 
   <footer>
@@ -94,6 +76,3 @@
   </footer>
 </body>
 </html>
-
-
-
