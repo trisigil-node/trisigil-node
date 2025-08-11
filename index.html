@@ -19,23 +19,36 @@
     }
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
     header{padding:28px 0 8px; text-align:center}
-    .logo{height:84px; width:auto; display:block; margin:0 auto 8px}
+
+    /* CONSISTENT LOGO SIZING (desktop + mobile) */
+    .logo{
+      height:110px;           /* desktop/tablet default */
+      width:auto;
+      display:block;
+      margin:0 auto 8px;
+    }
+
     nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px}
     nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
     nav a:hover{opacity:.8}
     nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#000;}
+
     .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:28px 0 40px}
     .card{border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#fff; transition:box-shadow .25s ease}
     .card:hover{box-shadow:0 14px 50px rgba(0,0,0,.06)}
-    .card-media{aspect-ratio:3/4; width:100%; height:auto; object-fit:cover; display:block; background:#f7f7f7}
-    footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
-
-    /* Card text styles */
     .card a{display:block; text-decoration:none; color:inherit}
-    .card h3,
-    .card p{margin:10px 12px; text-align:center; color:#000; text-decoration:none}
-    .card h3{font-family:"Cormorant Garamond", serif; font-size:18px; letter-spacing:.02em}
-    .card p{font-size:12px; letter-spacing:.06em; color:#222}
+    .card-media{aspect-ratio:3/4; width:100%; height:auto; object-fit:cover; display:block; background:#f7f7f7}
+    .card h3{
+      margin:14px 16px 6px;
+      font-family:"Cormorant Garamond", serif;
+      font-size:20px; letter-spacing:.02em; text-align:center; color:#000; font-weight:600;
+    }
+    .card p{
+      margin:0 16px 16px;
+      font-size:12px; letter-spacing:.12em; color:#222; text-align:center;
+    }
+
+    footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
 
     /* Gate modal */
     .gate-modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:60}
@@ -54,20 +67,18 @@
     .gate-msg{min-height:18px; margin-top:10px; font-size:12px; color:#d1d5db}
     .ok{color:#7fffb1}
 
-    /* Mobile adjustments */
+    /* MOBILE TWEAKS */
     @media (max-width:900px){
       .grid{grid-template-columns:1fr; gap:18px}
-      .logo{
-        height:24vw;      /* scales with screen width on mobile */
-        max-height:140px; /* cap so it doesn’t get too large */
-      }
       nav{gap:18px}
+      .logo{height:92px;}     /* mobile logo size */
     }
   </style>
 </head>
 <body>
   <header class="wrap">
-    <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
+    <!-- cache-bust (?v=2) to avoid older small versions -->
+    <img src="TRISIGIL (1).jpg?v=2" alt="TRISIGIL" class="logo" />
     <nav aria-label="Primary">
       <a class="active" href="index.html">HOME</a>
       <a href="theory.html">THEORY</a>
@@ -92,6 +103,7 @@
         <a class="clickable" href="https://www.amazon.com/Colliding-Manifestations-Intention-Interference-Reality-ebook/dp/B0FLSZ4LYJ/ref=sr_1_1?crid=PBVBIULDQU51&dib=eyJ2IjoiMSJ9.zFhJ76r0p1hT09LgiEwVwC8z8d-ifmdVyA1nGuZ2at7GjHj071QN20LucGBJIEps.NmlSGwsw0atWLlfIIVBWoAiE8B32pcs8htauTdIoSb4&dib_tag=se&keywords=colliding+manifestations&qid=1754929634&s=books&sprefix=colliding+manifestations%2Cstripbooks%2C109&sr=1-1" target="_blank" rel="noopener" aria-label="Colliding Manifestations — Amazon">
           <img src="bookcovergif.gif" alt="Colliding Manifestations — book cover" class="card-media" />
           <h3>COLLIDING MANIFESTATIONS: A THEORY OF INTENTION, INTERFERENCE, AND SHARED REALITY</h3>
+          <p>&nbsp;</p>
         </a>
       </div>
 
@@ -139,12 +151,7 @@
     const closeBtn = document.getElementById('gateClose');
     const msg = document.getElementById('gateMsg');
 
-    function openGate(){
-      modal.classList.add('open');
-      attempts = 0; msg.textContent = "";
-      input.value = ""; input.disabled = false; submit.disabled = false;
-      setTimeout(()=>input.focus(), 50);
-    }
+    function openGate(){ modal.classList.add('open'); attempts = 0; msg.textContent = ""; input.value = ""; input.disabled = false; submit.disabled = false; setTimeout(()=>input.focus(), 50); }
     function closeGate(){ modal.classList.remove('open'); }
 
     openGateBtn.addEventListener('click', function(e){ e.preventDefault(); openGate(); });
@@ -168,4 +175,3 @@
   </script>
 </body>
 </html>
-
