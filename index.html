@@ -12,10 +12,14 @@
     :root{ --fg:#0b0b0b; --muted:#666; --border:#eaeaea; }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{ margin:0; background:#fff; color:var(--fg); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; display:flex; flex-direction:column; }
+    body{
+      margin:0; background:#fff; color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:flex; flex-direction:column;
+    }
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
     header{padding:28px 0 8px; text-align:center}
-    .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
+    .logo{height:84px; width:auto; display:block; margin:0 auto 8px}
     nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px}
     nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
     nav a:hover{opacity:.8}
@@ -26,7 +30,7 @@
     .card-media{aspect-ratio:3/4; width:100%; height:auto; object-fit:cover; display:block; background:#f7f7f7}
     footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
 
-    /* Card text styles (new) */
+    /* Card text styles */
     .card a{display:block; text-decoration:none; color:inherit}
     .card h3,
     .card p{margin:10px 12px; text-align:center; color:#000; text-decoration:none}
@@ -38,14 +42,27 @@
     .gate-modal.open{display:flex}
     .gate-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
     .gate-scrim{position:absolute; inset:0; background:rgba(0,0,0,.55)}
-    .gate-panel{position:relative; z-index:2; width:min(520px,92%); padding:22px; border-radius:16px; border:1px solid rgba(255,255,255,.25); background:rgba(0,0,0,.35); backdrop-filter: blur(6px); color:#fff; text-align:center;}
+    .gate-panel{
+      position:relative; z-index:2; width:min(520px,92%); padding:22px;
+      border-radius:16px; border:1px solid rgba(255,255,255,.25);
+      background:rgba(0,0,0,.35); backdrop-filter: blur(6px); color:#fff; text-align:center;
+    }
     .gate-title{font-family:"Cormorant Garamond", serif; font-size:24px; margin:0 0 8px}
     .gate-input{width:100%; padding:10px 12px; background:transparent; border:0; border-bottom:2px solid #7fffb1; color:#fff; outline:none; font-size:14px}
     .gate-btn{margin-top:12px; width:100%; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.3); background:#111; color:#fff; cursor:pointer}
     .gate-close{margin-top:8px; width:100%; padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:transparent; color:#fff; cursor:pointer}
     .gate-msg{min-height:18px; margin-top:10px; font-size:12px; color:#d1d5db}
     .ok{color:#7fffb1}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr; gap:18px} .logo{height:72px} nav{gap:18px} }
+
+    /* Mobile adjustments */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr; gap:18px}
+      .logo{
+        height:20vw;      /* scales with screen width on mobile */
+        max-height:110px; /* cap so it doesn’t get too large */
+      }
+      nav{gap:18px}
+    }
   </style>
 </head>
 <body>
@@ -122,7 +139,12 @@
     const closeBtn = document.getElementById('gateClose');
     const msg = document.getElementById('gateMsg');
 
-    function openGate(){ modal.classList.add('open'); attempts = 0; msg.textContent = ""; input.value = ""; input.disabled = false; submit.disabled = false; setTimeout(()=>input.focus(), 50); }
+    function openGate(){
+      modal.classList.add('open');
+      attempts = 0; msg.textContent = "";
+      input.value = ""; input.disabled = false; submit.disabled = false;
+      setTimeout(()=>input.focus(), 50);
+    }
     function closeGate(){ modal.classList.remove('open'); }
 
     openGateBtn.addEventListener('click', function(e){ e.preventDefault(); openGate(); });
@@ -146,5 +168,3 @@
   </script>
 </body>
 </html>
-
-
