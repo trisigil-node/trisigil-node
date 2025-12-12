@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRISIGIL — Shop</title>
+  <meta name="description" content="TRISIGIL Shop — official pieces." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{ --fg:#0b0b0b; --muted:#666; --border:#eaeaea; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{ margin:0; background:#fff; color:var(--fg); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; display:flex; flex-direction:column; }
+    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
+    header{padding:28px 0 8px; text-align:center}
+    .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
+    nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px; flex-wrap:wrap}
+    nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
+    nav a:hover{opacity:.8}
+    nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#000;}
+
+    h1{font-family:"Cormorant Garamond", serif; font-size:34px; text-align:center; margin:6px 0 6px}
+    .kicker{text-align:center; font-size:12px; letter-spacing:.12em; color:#888; margin-bottom:18px}
+    .note{max-width:760px; margin:0 auto 26px; text-align:center; font-size:14px; color:#444; line-height:1.6}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      padding:10px 0 28px;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      transition:box-shadow .25s ease;
+    }
+    .card:hover{box-shadow:0 14px 50px rgba(0,0,0,.06)}
+    .img{width:100%; height:auto; display:block; object-fit:cover; background:#f7f7f7; aspect-ratio:3/4}
+    .pad{padding:14px 14px 16px}
+    .title{font-size:13px; letter-spacing:.08em; color:#111; margin:0 0 6px; text-transform:uppercase}
+    .variant{font-size:12px; color:#666; margin:0 0 12px}
+    .btn{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid #000;
+      background:#000;
+      color:#fff;
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:.08em;
+    }
+    .btn:hover{opacity:.9}
+
+    .about{
+      max-width:760px;
+      margin:0 auto 34px;
+      border-top:1px solid var(--border);
+      padding-top:22px;
+      text-align:center;
+    }
+    .about h2{font-family:"Cormorant Garamond", serif; font-size:22px; margin:0 0 10px}
+    .about p{margin:0 auto; color:#444; line-height:1.7; font-size:14px}
+
+    footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
+    @media (max-width:1000px){
+      .grid{grid-template-columns:1fr; gap:18px}
+      .logo{height:216px}
+      nav{gap:18px}
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
+    <nav aria-label="Primary">
+      <a href="index.html">HOME</a>
+      <a href="manifesto.html">MANIFESTO</a>
+      <a href="theory.html">THEORY</a>
+      <a href="book.html">COLLIDING MANIFESTATIONS</a>
+      <a href="ati.html">ATI</a>
+      <a class="active" href="shop.html">SHOP</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>SHOP</h1>
+    <div class="kicker">OFFICIAL PIECES</div>
+
+    <div class="note">
+      Checkout opens in Printful.<br>
+      Keep it simple. Choose the piece. Choose the color. Continue.
+    </div>
+
+    <section class="grid" aria-label="Products">
+      <!-- 6 items: 3 pieces x 2 colors -->
+      <div class="card">
+        <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Alignment Tee (White)" />
+        <div class="pad">
+          <p class="title">Alignment Tee</p>
+          <p class="variant">Color: White</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="img" src="dfghj.png" alt="Alignment Tee (Black)" />
+        <div class="pad">
+          <p class="title">Alignment Tee</p>
+          <p class="variant">Color: Black</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="img" src="brazenofkp_White_hoodie_white_pants_cinematic_lighting_sharp__5f0b91fa-02e3-45ae-9e79-734d504d5915_31.png" alt="Threshold Hoodie (White)" />
+        <div class="pad">
+          <p class="title">Threshold Hoodie</p>
+          <p class="variant">Color: White</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="img" src="VFGHJK.png" alt="Threshold Hoodie (Black)" />
+        <div class="pad">
+          <p class="title">Threshold Hoodie</p>
+          <p class="variant">Color: Black</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Begin Again Crewneck (White)" />
+        <div class="pad">
+          <p class="title">Begin Again Crewneck</p>
+          <p class="variant">Color: White</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="img" src="dfghj.png" alt="Begin Again Crewneck (Black)" />
+        <div class="pad">
+          <p class="title">Begin Again Crewneck</p>
+          <p class="variant">Color: Black</p>
+          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" aria-label="About this piece">
+      <h2>About This Piece</h2>
+      <p>
+        Built for repeat wear. Clean lines. Quietly premium. Designed to hold its form and carry its meaning without announcing itself.
+        If it fits your rhythm, it stays.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © TRISIGIL 2025. All Rights Reserved. ·
+    <a href="mailto:contact@trisigil.com" style="color:inherit">contact@trisigil.com</a>
+  </footer>
+</body>
+</html>
