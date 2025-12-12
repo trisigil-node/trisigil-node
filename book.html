@@ -16,7 +16,7 @@
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
     header{padding:28px 0 8px; text-align:center}
     .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
-    nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px}
+    nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px; flex-wrap:wrap}
     nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
     nav a:hover{opacity:.8}
     nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#000;}
@@ -25,8 +25,48 @@
     .section{display:grid; grid-template-columns:360px 1fr; gap:24px; align-items:center; padding:16px 0 34px;}
     .img{width:100%; height:auto; border-radius:12px; border:1px solid var(--border); display:block; object-fit:cover}
     h1{font-family:"Cormorant Garamond", serif; font-size:34px; text-align:center; margin:6px 0 4px}
-    .kicker{text-align:center; font-size:12px; letter-spacing:.12em; color:#888; margin-bottom:10px}
+    .kicker{text-align:center; font-size:12px; letter-spacing:.12em; color:#888; margin-bottom:6px}
+    .positioning{
+      text-align:center;
+      font-size:14px;
+      color:#444;
+      margin-bottom:18px;
+      max-width:720px;
+      margin-left:auto;
+      margin-right:auto;
+      line-height:1.6;
+    }
     p{line-height:1.7; font-size:16px; color:#222}
+
+    .cta-wrap{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:10px 0 26px;
+    }
+    .cta{
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid #000;
+      background:#000;
+      color:#fff;
+      text-decoration:none;
+      font-size:13px;
+      letter-spacing:.08em;
+    }
+    .cta.alt{
+      background:#fff;
+      color:#000;
+    }
+    .cta:hover{opacity:.9}
+
+    .bridge{
+      text-align:center;
+      font-size:14px;
+      color:#444;
+      margin-bottom:10px;
+    }
 
     @media (max-width:1000px){
       .section{grid-template-columns:1fr; gap:14px}
@@ -40,15 +80,22 @@
     <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
     <nav aria-label="Primary">
       <a href="index.html">HOME</a>
+      <a href="manifesto.html">MANIFESTO</a>
       <a href="theory.html">THEORY</a>
       <a class="active" href="book.html">COLLIDING MANIFESTATIONS</a>
-      <a href="signalwear.html">SIGILWEAR</a>
+      <a href="ati.html">ATI</a>
+      <a href="shop.html">SHOP</a>
     </nav>
   </header>
 
   <main class="wrap">
     <h1>COLLIDING MANIFESTATIONS</h1>
     <div class="kicker">A THEORY OF INTENTION, INTERFERENCE, AND SHARED REALITY</div>
+
+    <div class="positioning">
+      A keystone theory treating manifestation as a system of colliding signals in a shared field —
+      not a solo wish.
+    </div>
 
     <section class="section">
       <img src="COLLIDING MANIFESTATION (2)_compressed.png" alt="Colliding Manifestations Book" class="img" />
@@ -60,13 +107,20 @@
         <p><strong>This isn’t a promise. It’s an operating manual.</strong> A way to see the invisible traffic of human intention, to navigate it, and, when possible, to shape it.</p>
       </div>
     </section>
+
+    <div class="cta-wrap">
+      <a class="cta" href="https://www.amazon.com/Colliding-Manifestations-Intention-Interference-Reality/dp/B0FLWNB6BZ/ref=monarch_sidesheet" target="_blank" rel="noopener">Read on Amazon</a>
+      <a class="cta alt" href="https://trisigil.gumroad.com/" target="_blank" rel="noopener">Get the digital edition</a>
+    </div>
+
+    <div class="bridge">
+      The theory lives here. Its execution continues through ATI — and recursion begins at the Gate.
+    </div>
   </main>
 
   <footer>
-    © TRISIGIL 2025. All Rights Reserved. · <a href="mailto:contact@trisigil.com" style="color:inherit">contact@trisigil.com</a>
+    © TRISIGIL 2025. All Rights Reserved. ·
+    <a href="mailto:contact@trisigil.com" style="color:inherit">contact@trisigil.com</a>
   </footer>
 </body>
 </html>
-
-
-
