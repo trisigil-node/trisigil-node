@@ -18,12 +18,12 @@
     /* Consistent logo sizes */
     .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
 
-    nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px}
+    nav{display:flex; justify-content:center; gap:28px; padding:8px 0 18px; font-size:14px; flex-wrap:wrap}
     nav a{color:var(--fg); text-decoration:none; position:relative; padding:6px 2px}
     nav a:hover{opacity:.8}
     nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#000;}
 
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:28px 0 40px}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:28px 0 18px}
     .card{border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#fff; transition:box-shadow .25s ease}
     .card:hover{box-shadow:0 14px 50px rgba(0,0,0,.06)}
     .card-media{aspect-ratio:3/4; width:100%; height:auto; object-fit:cover; display:block; background:#f7f7f7}
@@ -36,10 +36,38 @@
       text-decoration:none;
       margin-top:8px;
       font-size:1rem;
+      padding:0 10px;
     }
     .card-caption.sub{
       font-size:.78rem;
       letter-spacing:.04em;
+      color:#444;
+    }
+    .card-links{
+      text-align:center;
+      margin-top:10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:.82rem;
+      color:#444;
+    }
+    .card-links a{
+      color:#000;
+      text-decoration:none;
+      border-bottom:1px solid rgba(0,0,0,.18);
+      display:inline-block;
+      width:fit-content;
+      margin:0 auto;
+      padding-bottom:2px;
+    }
+    .card-links a:hover{opacity:.8}
+
+    .framing{
+      text-align:center;
+      margin:10px 0 28px;
+      font-size:.82rem;
+      letter-spacing:.06em;
       color:#444;
     }
 
@@ -56,7 +84,6 @@
       border-radius:16px; border:1px solid rgba(255,255,255,.25);
       background:rgba(0,0,0,.35); backdrop-filter: blur(6px);
       color:#fff; text-align:center;
-      /* ADD ONLY: stabilize caret rendering on desktop */
       isolation:isolate;
       will-change:backdrop-filter;
     }
@@ -65,7 +92,6 @@
       width:100%; padding:10px 12px;
       background:transparent; border:0; border-bottom:2px solid #7fffb1;
       color:#fff; outline:none; font-size:14px;
-      /* ADD ONLY: make caret visible & ensure paint */
       caret-color:#7fffb1;
       -webkit-text-fill-color:#fff;
       transform:translateZ(0);
@@ -88,29 +114,35 @@
     <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
     <nav aria-label="Primary">
       <a class="active" href="index.html">HOME</a>
+      <a href="manifesto.html">MANIFESTO</a>
       <a href="theory.html">THEORY</a>
       <a href="book.html">COLLIDING MANIFESTATIONS</a>
-      <a href="signalwear.html">SIGILWEAR</a>
+      <a href="ati.html">ATI</a>
+      <a href="shop.html">SHOP</a>
     </nav>
   </header>
 
   <main class="wrap">
     <section aria-label="Featured" class="grid">
-      <!-- Left card: Brand/Merch image — links to Gumroad -->
+      <!-- Left card: ATI apparel image — links to ATI page (not checkout) -->
       <div class="card">
-        <a class="clickable" href="https://trisigil.gumroad.com/" target="_blank" rel="noopener" aria-label="TRISIGIL Store on Gumroad">
-          <img src="Untitled design.gif" alt="TRISIGIL SignalWear — Store" class="card-media" />
+        <a class="clickable" href="ati.html" aria-label="ATI — Alignment Threshold Infinity">
+          <img src="Untitled design.gif" alt="TRISIGIL ATI — Alignment Threshold Infinity" class="card-media" />
         </a>
-        <div class="card-caption"><strong>TRISIGIL SIGILWEAR</strong></div>
-        <div class="card-caption sub">DESIGNED FOR THOSE IN SYNC</div>
+        <div class="card-caption"><strong>ATI</strong></div>
+        <div class="card-caption sub">ALIGNMENT → THRESHOLD → INFINITY</div>
       </div>
 
-      <!-- Middle card: Book — image links to Amazon -->
+      <!-- Middle card: Book — image links to Amazon; subtle secondary link to Gumroad -->
       <div class="card">
         <a class="clickable" href="https://www.amazon.com/Colliding-Manifestations-Intention-Interference-Reality/dp/B0FLWNB6BZ/ref=monarch_sidesheet" target="_blank" rel="noopener" aria-label="Colliding Manifestations — Amazon">
           <img src="bookcovergif.gif" alt="Colliding Manifestations — book cover" class="card-media" />
         </a>
         <div class="card-caption"><strong>COLLIDING MANIFESTATIONS: A THEORY OF INTENTION, INTERFERENCE, AND SHARED REALITY</strong></div>
+        <div class="card-links" aria-label="Book links">
+          <a href="https://www.amazon.com/Colliding-Manifestations-Intention-Interference-Reality/dp/B0FLWNB6BZ/ref=monarch_sidesheet" target="_blank" rel="noopener">Read the theory → Amazon</a>
+          <a href="https://trisigil.gumroad.com/" target="_blank" rel="noopener">Download direct → Gumroad</a>
+        </div>
       </div>
 
       <!-- Right card: Recursive Gate — image opens modal -->
@@ -120,8 +152,11 @@
         </a>
         <div class="card-caption"><strong>RECURSIVE GATE</strong></div>
         <div class="card-caption sub">ENTER THE KEYSTONE PHRASE</div>
+        <div class="card-caption sub">READERS WHO HAVE DECODED THE SYMBOL KNOW WHAT TO ENTER</div>
       </div>
     </section>
+
+    <div class="framing">Theory → Execution → Recursion</div>
   </main>
 
   <footer>
@@ -196,4 +231,3 @@
   </script>
 </body>
 </html>
-
