@@ -12,7 +12,15 @@
     :root{ --fg:#0b0b0b; --muted:#666; --border:#eaeaea; }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{ margin:0; background:#fff; color:var(--fg); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; display:flex; flex-direction:column; }
+    body{
+      margin:0;
+      background:#fff;
+      color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:flex;
+      flex-direction:column;
+    }
+
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
     header{padding:28px 0 8px; text-align:center}
     .logo{height:336px; width:auto; display:block; margin:0 auto 8px}
@@ -25,6 +33,25 @@
     .kicker{text-align:center; font-size:12px; letter-spacing:.12em; color:#888; margin-bottom:18px}
     .note{max-width:760px; margin:0 auto 26px; text-align:center; font-size:14px; color:#444; line-height:1.6}
 
+    /* DROP LABELS */
+    .drop-label{
+      max-width:1100px;
+      margin:32px auto 14px;
+      padding:0 18px;
+      text-align:left;
+    }
+    .drop-label .code{
+      font-size:12px;
+      letter-spacing:.16em;
+      color:#111;
+    }
+    .drop-label .status{
+      font-size:12px;
+      color:#666;
+      margin-top:4px;
+    }
+
+    /* PRODUCT GRID */
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -39,10 +66,18 @@
       transition:box-shadow .25s ease;
     }
     .card:hover{box-shadow:0 14px 50px rgba(0,0,0,.06)}
-    .img{width:100%; height:auto; display:block; object-fit:cover; background:#f7f7f7; aspect-ratio:3/4}
+    .img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      background:#f7f7f7;
+      aspect-ratio:3/4;
+    }
     .pad{padding:14px 14px 16px}
     .title{font-size:13px; letter-spacing:.08em; color:#111; margin:0 0 6px; text-transform:uppercase}
     .variant{font-size:12px; color:#666; margin:0 0 12px}
+
     .btn{
       display:inline-block;
       padding:10px 12px;
@@ -56,6 +91,15 @@
     }
     .btn:hover{opacity:.9}
 
+    .btn.locked{
+      background:#fff;
+      color:#000;
+      border-color:#ccc;
+      cursor:default;
+      opacity:.7;
+    }
+
+    /* ABOUT */
     .about{
       max-width:760px;
       margin:0 auto 34px;
@@ -66,7 +110,15 @@
     .about h2{font-family:"Cormorant Garamond", serif; font-size:22px; margin:0 0 10px}
     .about p{margin:0 auto; color:#444; line-height:1.7; font-size:14px}
 
-    footer{margin-top:auto; padding:28px 0; font-size:12px; color:#7a7a7a; text-align:center; border-top:1px solid var(--border)}
+    footer{
+      margin-top:auto;
+      padding:28px 0;
+      font-size:12px;
+      color:#7a7a7a;
+      text-align:center;
+      border-top:1px solid var(--border)
+    }
+
     @media (max-width:1000px){
       .grid{grid-template-columns:1fr; gap:18px}
       .logo{height:216px}
@@ -75,96 +127,111 @@
   </style>
 </head>
 <body>
-  <header class="wrap">
-    <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
-    <nav aria-label="Primary">
-      <a href="index.html">HOME</a>
-      <a href="manifesto.html">MANIFESTO</a>
-      <a href="theory.html">THEORY</a>
-      <a href="book.html">COLLIDING MANIFESTATIONS</a>
-      <a href="ati.html">ATI</a>
-      <a class="active" href="shop.html">SHOP</a>
-    </nav>
-  </header>
 
-  <main class="wrap">
-    <h1>SHOP</h1>
-    <div class="kicker">OFFICIAL PIECES</div>
+<header class="wrap">
+  <img src="TRISIGIL (1).jpg" alt="TRISIGIL" class="logo" />
+  <nav aria-label="Primary">
+    <a href="index.html">HOME</a>
+    <a href="manifesto.html">MANIFESTO</a>
+    <a href="theory.html">THEORY</a>
+    <a href="book.html">COLLIDING MANIFESTATIONS</a>
+    <a href="ati.html">ATI</a>
+    <a class="active" href="shop.html">SHOP</a>
+  </nav>
+</header>
 
-    <div class="note">
-      Checkout opens in Printful.<br>
-      Keep it simple. Choose the piece. Choose the color. Continue.
+<main class="wrap">
+  <h1>SHOP</h1>
+  <div class="kicker">OFFICIAL PIECES</div>
+
+  <div class="note">
+    Checkout opens in Printful.<br>
+    Keep it simple. Choose the piece. Choose the color. Continue.
+  </div>
+
+  <!-- LIVE DROP -->
+  <div class="drop-label">
+    <div class="code">ATI_ALIGN_DROP_01</div>
+    <div class="status">Alignment Phase — Active</div>
+  </div>
+
+  <section class="grid">
+    <div class="card">
+      <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Alignment Tee White" />
+      <div class="pad">
+        <p class="title">Alignment Tee</p>
+        <p class="variant">Color: White</p>
+        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
+      </div>
     </div>
 
-    <section class="grid" aria-label="Products">
-      <!-- 6 items: 3 pieces x 2 colors -->
-      <div class="card">
-        <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Alignment Tee (White)" />
-        <div class="pad">
-          <p class="title">Alignment Tee</p>
-          <p class="variant">Color: White</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
+    <div class="card">
+      <img class="img" src="dfghj.png" alt="Alignment Tee Black" />
+      <div class="pad">
+        <p class="title">Alignment Tee</p>
+        <p class="variant">Color: Black</p>
+        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
       </div>
+    </div>
 
-      <div class="card">
-        <img class="img" src="dfghj.png" alt="Alignment Tee (Black)" />
-        <div class="pad">
-          <p class="title">Alignment Tee</p>
-          <p class="variant">Color: Black</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
+    <div class="card">
+      <img class="img" src="brazenofkp_White_hoodie_white_pants_cinematic_lighting_sharp__5f0b91fa-02e3-45ae-9e79-734d504d5915_31.png" alt="Threshold Hoodie White" />
+      <div class="pad">
+        <p class="title">Threshold Hoodie</p>
+        <p class="variant">Color: White</p>
+        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <img class="img" src="brazenofkp_White_hoodie_white_pants_cinematic_lighting_sharp__5f0b91fa-02e3-45ae-9e79-734d504d5915_31.png" alt="Threshold Hoodie (White)" />
-        <div class="pad">
-          <p class="title">Threshold Hoodie</p>
-          <p class="variant">Color: White</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
+  <!-- FORMING DROP -->
+  <div class="drop-label">
+    <div class="code">ATI_THRESH_DROP_02</div>
+    <div class="status">Threshold Phase — Forming</div>
+  </div>
+
+  <section class="grid">
+    <div class="card">
+      <img class="img" src="VFGHJK.png" alt="Threshold Drop Forming" />
+      <div class="pad">
+        <p class="title">Threshold Hoodie</p>
+        <p class="variant">Status: Forming</p>
+        <span class="btn locked">FORMING</span>
       </div>
+    </div>
 
-      <div class="card">
-        <img class="img" src="VFGHJK.png" alt="Threshold Hoodie (Black)" />
-        <div class="pad">
-          <p class="title">Threshold Hoodie</p>
-          <p class="variant">Color: Black</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
+    <div class="card">
+      <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Begin Again Crewneck Forming" />
+      <div class="pad">
+        <p class="title">Begin Again Crewneck</p>
+        <p class="variant">Status: Forming</p>
+        <span class="btn locked">FORMING</span>
       </div>
+    </div>
 
-      <div class="card">
-        <img class="img" src="brazenofkp_super_tall_educated_girl_wearing_white_long_sleeve_63f6bd8f-9a00-43ef-81de-2445ed0f9674_01.png" alt="Begin Again Crewneck (White)" />
-        <div class="pad">
-          <p class="title">Begin Again Crewneck</p>
-          <p class="variant">Color: White</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
+    <div class="card">
+      <img class="img" src="dfghj.png" alt="Begin Again Crewneck Forming" />
+      <div class="pad">
+        <p class="title">Begin Again Crewneck</p>
+        <p class="variant">Status: Forming</p>
+        <span class="btn locked">FORMING</span>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <img class="img" src="dfghj.png" alt="Begin Again Crewneck (Black)" />
-        <div class="pad">
-          <p class="title">Begin Again Crewneck</p>
-          <p class="variant">Color: Black</p>
-          <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN PRINTFUL</a>
-        </div>
-      </div>
-    </section>
+  <section class="about">
+    <h2>About This Piece</h2>
+    <p>
+      Built for repeat wear. Clean lines. Quietly premium. Designed to hold its form and carry its meaning without announcing itself.
+      If it fits your rhythm, it stays.
+    </p>
+  </section>
+</main>
 
-    <section class="about" aria-label="About this piece">
-      <h2>About This Piece</h2>
-      <p>
-        Built for repeat wear. Clean lines. Quietly premium. Designed to hold its form and carry its meaning without announcing itself.
-        If it fits your rhythm, it stays.
-      </p>
-    </section>
-  </main>
+<footer>
+  © TRISIGIL 2025. All Rights Reserved. ·
+  <a href="mailto:contact@trisigil.com" style="color:inherit">contact@trisigil.com</a>
+</footer>
 
-  <footer>
-    © TRISIGIL 2025. All Rights Reserved. ·
-    <a href="mailto:contact@trisigil.com" style="color:inherit">contact@trisigil.com</a>
-  </footer>
 </body>
 </html>
