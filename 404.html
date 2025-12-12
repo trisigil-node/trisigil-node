@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRISIGIL</title>
+  <meta name="robots" content="noindex" />
+  <script>
+    (function () {
+      var path = window.location.pathname || "/";
+      var base = "/"; // repo root (custom domain)
+      // Normalize
+      path = path.replace(base, "/");
+      // Remove leading/trailing slashes
+      var slug = path.replace(/^\/+|\/+$/g, "");
+
+      // If someone hits "/" but GitHub serves 404 in edge cases, go home.
+      if (!slug) {
+        window.location.replace("index.html" + window.location.search + window.location.hash);
+        return;
+      }
+
+      // If they already requested an .html file, let it fall through to 404 content.
+      if (slug.endsWith(".html")) return;
+
+      // Map clean routes -> real files
+      var routes = {
+        "home": "index.html",
+        "manifesto": "manifesto.html",
+        "theory": "theory.html",
+        "colliding-manifestations": "book.html",
+        "book": "book.html",
+        "ati": "ati.html",
+        "signalwear": "ati.html",
+        "shop": "shop.html"
+      };
+
+      // Also support nested accidental paths like "/theory/" or "/theory/index"
+      slug = slug.replace(/\/index$/i, "");
+
+      if (routes[slug]) {
+        window.location.replace(routes[slug] + window.location.search + window.location.hash);
+        return;
+      }
+
+      // If no route match, send to HOME (or comment this out to show a real 404)
+      window.location.replace("index.html" + window.location.search + window.location.hash);
+    })();
+  </script>
+  <style>
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:#fff; color:#111}
+    .wrap{max-width:760px; margin:0 auto; padding:48px 18px; text-align:center}
+    a{color:inherit}
+    .muted{color:#666; font-size:14px; line-height:1.6}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="muted">Routing…</div>
+  </div>
+</body>
+</html>
