@@ -91,6 +91,13 @@
     }
     .btn:hover{opacity:.9}
 
+    /* NEW: DISABLED BUTTON */
+    .btn.disabled{
+      pointer-events:none;
+      opacity:0.4;
+      cursor:default;
+    }
+
     .btn.locked{
       background:#fff;
       color:#000;
@@ -152,7 +159,7 @@
   <!-- LIVE DROP -->
   <div class="drop-label">
     <div class="code">ATI_ALIGN_DROP_01</div>
-    <div class="status">Alignment Phase — Active</div>
+    <div class="status">Alignment Phase — Forming</div>
   </div>
 
   <section class="grid">
@@ -161,7 +168,7 @@
       <div class="pad">
         <p class="title">ATI_ALIGN_DROP_01_HOODIE</p>
         <p class="variant">Color: Black</p>
-        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN STORE</a>
+        <span class="btn disabled">01_31_2026</span>
       </div>
     </div>
 
@@ -170,7 +177,7 @@
       <div class="pad">
         <p class="title">ATI_ALIGN_DROP_01_LS</p>
         <p class="variant">Color: White</p>
-        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN STORE</a>
+        <span class="btn disabled">01_31_2026</span>
       </div>
     </div>
 
@@ -179,7 +186,7 @@
       <div class="pad">
         <p class="title">ATI_ALIGN_DROP_01_CREW</p>
         <p class="variant">Color: White</p>
-        <a class="btn" href="https://trisigil.printful.me/" target="_blank" rel="noopener">VIEW IN STORE</a>
+        <span class="btn disabled">01_31_2026</span>
       </div>
     </div>
   </section>
@@ -235,8 +242,3 @@
 
 </body>
 </html>
-
-
-
-
-
